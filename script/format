@@ -1,0 +1,2 @@
+#!/bin/bash
+tidy -xml -i -wrap 0 -m rml/*
