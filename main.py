@@ -17,6 +17,7 @@ def rmExt(filename: str):
 
 filenames = map(rmExt, listdir("rml"))
 for filename in filenames:
+    print(f"Generate {filename}")
     inFile = "rml/" + filename + ".rml"
     outFile = "pdf/" + filename + ".pdf"
 
