@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 from trml2pdf import parseString
-
-rml = """
-"""
+from os import listdir
 
 def readContent(filename):
   try:
@@ -14,7 +12,10 @@ def readContent(filename):
   except Exception as e:
     return f"Error: {e}"
 
-filenames = ["helloworld", "two-frames"]
+def rmExt(filename: str):
+    return filename.split(".")[0]
+
+filenames = map(rmExt, listdir("rml"))
 for filename in filenames:
     inFile = "rml/" + filename + ".rml"
     outFile = "pdf/" + filename + ".pdf"
