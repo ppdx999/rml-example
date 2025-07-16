@@ -15,6 +15,21 @@ def readContent(filename):
 def rmExt(filename: str):
     return filename.split(".")[0]
 
+# Register Font
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+
+# Register HeiseiMin-W3
+pdfmetrics.registerFont(UnicodeCIDFont('HeiseiMin-W3'))
+
+# Register ttf
+# from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+
+pdfmetrics.registerFont(
+    TTFont("NotoSansCJKjp", "files/NotoSansJP-Regular.ttf")
+)
+
 filenames = map(rmExt, listdir("rml"))
 for filename in filenames:
     print(f"Generate {filename}")
