@@ -1,5 +1,11 @@
 <!DOCTYPE document SYSTEM "rml.dtd">
 <document filename="example_01.pdf">
+	<docinit>
+		<registerFont
+			fontName="NotoSansCJKjp"
+			fontFile="files/NotoSansJP-Regular.ttf"
+		/>
+	</docinit>
   <template>
     <!--this section contains elements of the document -->
     <!--which are FIXED into position. -->

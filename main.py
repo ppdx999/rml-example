@@ -15,6 +15,7 @@ def readContent(filename):
 def rmExt(filename: str):
     return filename.split(".")[0]
 
+# 埋め込みフォントはtrml2pdfに存在しないのでここに書く必要がある
 # Register Font
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.cidfonts import UnicodeCIDFont
@@ -22,13 +23,14 @@ from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 # Register HeiseiMin-W3
 pdfmetrics.registerFont(UnicodeCIDFont('HeiseiMin-W3'))
 
+# docinitタグを使えばtrml2pdf内部で処理してくれる
 # Register ttf
 # from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
+# from reportlab.pdfbase.ttfonts import TTFont
 
-pdfmetrics.registerFont(
-    TTFont("NotoSansCJKjp", "files/NotoSansJP-Regular.ttf")
-)
+# pdfmetrics.registerFont(
+#     TTFont("NotoSansCJKjp", "files/NotoSansJP-Regular.ttf")
+# )
 
 filenames = map(rmExt, listdir("rml"))
 for filename in filenames:
