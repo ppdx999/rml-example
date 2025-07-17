@@ -21,7 +21,7 @@ style_body = PS(name = 'body',
        leading = 13)
 
 # DocTemplateの生成
-file_path = "./hello_world.pdf"
+file_path = "./pdf/gen-by-flowable.pdf"
 doc = BaseDocTemplate(file_path, 
     title="テスト",
     pagesize=portrait(A4),
@@ -47,6 +47,7 @@ PS = ParagraphStyle
 style_body = PS(name = 'body',
        fontName = "HeiseiKakuGo-W5",
        fontSize = 12,
+       textColor=colors.Color(0,1,0,1),
        leading = 13)
 
 ## 内容記入
